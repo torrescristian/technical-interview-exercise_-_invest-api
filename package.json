@@ -4,6 +4,7 @@
   "description": "REST Service to serve share prices ",
   "main": "app/index.js",
   "scripts": {
+    "start": "jest --NODE_ENV=prod",
     "test": "jest --NODE_ENV=test",
     "dc": "dependency-check ./package.json --unused --no-dev"
   },
