@@ -1,6 +1,6 @@
 {
   "name": "invest-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "REST Service to serve share prices ",
   "main": "app/index.js",
   "scripts": {
