@@ -1,0 +1,10 @@
+{
+    "alphavantage": {
+        "url": {
+            "protocol": "https",
+            "hostname": "www.example.com",
+            "pathname": "api"
+        },
+        "key": "1234"
+    }
+}

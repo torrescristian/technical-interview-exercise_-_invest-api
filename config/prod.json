@@ -1,0 +1,10 @@
+{
+    "alphavantage": {
+        "url": {
+            "protocol": "https",
+            "hostname": "www.alphavantage.co",
+            "pathname": "query"
+        },
+        "key": "X86NOH6II01P7R24"
+    }
+}
