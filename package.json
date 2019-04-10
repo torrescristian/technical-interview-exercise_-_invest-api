@@ -6,7 +6,12 @@
   "scripts": {
     "start": "jest --NODE_ENV=prod",
     "test": "jest --NODE_ENV=test",
-    "dc": "dependency-check ./package.json --unused --no-dev"
+    "dependency-check": "dependency-check ./package.json && dependency-check ./package.json --unused --no-dev"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run dependency-check && npm test"
+    }
   },
   "author": "Cristian Tomas Torres <cristiantomastorres@gmail.com>",
   "license": "ISC",
@@ -20,13 +25,8 @@
   },
   "devDependencies": {
     "dependency-check": "^3.3.0",
-    "ghook": "0.0.2",
+    "ghooks": "^2.0.4",
     "jest": "^24.7.1",
     "node-mocks-http": "^1.7.3"
-  },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run dc && npm test"
-    }
   }
 }
