@@ -6,5 +6,9 @@
             "pathname": "query"
         },
         "key": "X86NOH6II01P7R24"
+    },
+    "jwt": {
+        "secret_key": "402k}jd{q:2MUva4*H1b",
+        "expiresIn": "2h"
     }
 }

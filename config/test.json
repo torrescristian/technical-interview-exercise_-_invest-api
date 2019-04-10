@@ -1,10 +1,14 @@
 {
     "alphavantage": {
         "url": {
-            "protocol": "https",
-            "hostname": "www.example.com",
-            "pathname": "api"
+            "protocol": "",
+            "hostname": "",
+            "pathname": ""
         },
-        "key": "1234"
+        "key": ""
+    },
+    "jwt": {
+        "secret_key": "1234",
+        "expiresIn": "15d"
     }
 }

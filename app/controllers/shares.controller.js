@@ -1,4 +1,4 @@
-const sharesService = new (require('../services/shares.service'))();
+const sharesService = require('../services/shares.service');
 
 function getDataFromShares(shares) {
   const timeSeries = shares['Time Series (Daily)'];
@@ -18,7 +18,7 @@ function getDataFromShares(shares) {
   return { value, previous, change_percent, change_value };
 }
 
-module.exports = class SharesController {
+module.exports = {
   async get(req, res) {
     const { symbol } = req.params;
 
@@ -36,5 +36,5 @@ module.exports = class SharesController {
       change_value,
       color_code: change_value >= 0 ? 'green' : 'red',
     });
-  }
+  },
 };

@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const sharesController = new (require('../controllers/shares.controller'))();
+const controller = require('../controllers/shares.controller');
+const middleware = require('../middlewares/auth.middleware');
 
-router.get('/:symbol', sharesController.get);
+router.get('/:symbol', middleware.verify, controller.get);
 
 module.exports = router;

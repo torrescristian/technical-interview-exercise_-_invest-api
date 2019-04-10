@@ -2,7 +2,12 @@ const url = require('url');
 const config = require('config');
 const axios = require('axios');
 
-module.exports = class ShareService {
+module.exports = {
+
+  /**
+   * @returns {object}
+   * @param {object} symbol
+   */
   async get({ symbol }) {
     const service = config.get('alphavantage.url');
     const path = url.format({

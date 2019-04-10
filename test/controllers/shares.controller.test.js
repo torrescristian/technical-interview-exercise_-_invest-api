@@ -1,24 +1,20 @@
-// const config = require('config');
 const common = require('../common');
-const controller = new (require('../../app/controllers/shares.controller'))();
+const controller = require('../../app/controllers/shares.controller');
+const service = require('../../app/services/shares.service');
+const stub = require('../stubs/shares.stub');
 
 let response = {};
 describe('test the "get" method', () => {
   beforeAll(async () => {
-    const axios = require('axios');
-    axios.get = jest.fn().mockResolvedValue({
-      data: require('../stubs/shares.stub'),
-    });
+    // mock the service
+    service.get = jest.fn().mockResolvedValue(stub);
 
     const req = common.createRequest();
-    req.params.symbol = 'FB';
     const res = common.createResponse();
+
+    req.params.symbol = 'FB';
     await controller.get(req, res);
     response = JSON.parse(res._getData());
-  });
-
-  afterAll(() => {
-    common.cleanAll();
   });
 
   it('should be an object', (next) => {
