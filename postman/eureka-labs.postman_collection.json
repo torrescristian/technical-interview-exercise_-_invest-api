@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "94daaae6-e37a-49e1-82bb-1d0b54ce5e28",
+		"name": "eureka-labs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/shares",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{invest-api}}/shares/AAPL",
+					"host": [
+						"{{invest-api}}"
+					],
+					"path": [
+						"shares",
+						"AAPL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"cristian\",\r\n  \"email\": \"cristian@gmail.com\",\r\n  \"password\": \"1234\"\r\n}"
+				},
+				"url": {
+					"raw": "{{invest-api}}/login/create",
+					"host": [
+						"{{invest-api}}"
+					],
+					"path": [
+						"login",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
