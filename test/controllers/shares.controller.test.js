@@ -17,7 +17,7 @@ describe('test the "get" method', () => {
     response = JSON.parse(res._getData());
   });
 
-  it('should be an object', (next) => {
+  it('should be a object', (next) => {
     expect(response).toBeInstanceOf(Object);
     next();
   });

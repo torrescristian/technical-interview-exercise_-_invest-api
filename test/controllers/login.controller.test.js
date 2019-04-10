@@ -5,7 +5,7 @@ const stub = require('../stubs/login.stub');
 
 let response = {};
 describe('test the "create" method', () => {
-  beforeAll(async () => {
+  beforeAll(() => {
     // mock the service
     service.create = jest.fn(() => stub);
 
@@ -21,7 +21,7 @@ describe('test the "create" method', () => {
     response = JSON.parse(res._getData());
   });
 
-  it('should be a string', (next) => {
+  it('should be a object', (next) => {
     expect(response).toBeInstanceOf(Object);
     next();
   });
